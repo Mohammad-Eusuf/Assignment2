@@ -3,6 +3,7 @@ import placecollection
 
 def main():
     choice=1
+    place_collection=placecollection.PlaceCollection([])
     while (choice>0 and choice<6):
         print("\n**********Menu*****************\n")
         print("\n1. Load CSV file")    
@@ -11,7 +12,7 @@ def main():
         print("\n4. Get number of unvisited places")    
         print("\n5. Sort the places by Priority")
         choice=int(input("\nEnter between 1-5 : "))
-        place_collection=placecollection.PlaceCollection()
+        
 
         if (choice==1):
             place_collection.load_places()
@@ -27,6 +28,7 @@ def main():
             priority=input("\nEnter the priority of place : ")        
             status=input("\nEnter the place visited status (Y or N) : ")
             p1 = place.place(name,country,priority,status)
+            print("\nPlace entered is : ",p1.name)
             place_collection.add_place(p1)
             print("\nPlace Added Successfully")
         

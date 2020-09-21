@@ -7,7 +7,7 @@ class place:
     self.visited_status = visited_status
     
   def __str__(self):
-    print("\nPlace : "+self.name + " country : " + self.country + " Visited Status : " + self.visited_status + " Priority : " + self.is_important())
+    print("\nPlace : " + self.name + " country : " + self.country + " Visited Status : " + self.visited_status + " Priority : " + self.is_important())
     
   def mark_visited(self):
     self.visited_status='Y'
@@ -16,7 +16,7 @@ class place:
     self.visited_status='N'
     
   def is_important(self):
-    if self.priority<=2:
+    if int(self.priority)<=2:
         return "Important"
     else:
         return "Not Important"

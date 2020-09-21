@@ -1,7 +1,8 @@
 import place
 
 class PlaceCollection:
-  def __init__(self):
+  
+  def __init__(self,list_em):
     self.places = []
 
   def add_place(self,placeObject):
@@ -19,7 +20,7 @@ class PlaceCollection:
   def save_places(self):
     fh=open("TravelDetails.csv","w")
     for pl in self.places:
-        fh.write(pl.name + "," + pl.country + "," + pl.visited_status + "," + pl.priority() + "\n")
+        fh.write(pl.name + "," + pl.country + "," + pl.visited_status + "," + pl.priority + "\n")
 
     fh.close()    
     
@@ -31,6 +32,7 @@ class PlaceCollection:
     return count
     
   def sort_values(self):
+    print("\nCount in Places :",len(self.places))
     for pl in self.places:
         print("\nPlace : "+pl.name + " country : " + pl.country + " Visited Status : " + pl.visited_status + " Priority : " + pl.is_important())
         print("\n")
