@@ -27,7 +27,7 @@ class PlaceCollection:
   def get_visited_places(self):
     count=0
     for pl in self.places:
-       if p1.visited_status.lower()=='y':
+       if pl.visited_status.lower()=='n':
             count+=1
     return count
     
